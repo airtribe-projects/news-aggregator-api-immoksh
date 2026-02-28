@@ -11,16 +11,14 @@ const preferenceSchema = new mongoose.Schema({
         required: true
     },
     languages: {
-        type: [String],
-        required: false
+        type: String,
+        enum: ['en', 'es', 'fr', 'de', 'it', 'pt', 'ru', 'zh'],
+        default: 'en'
     },
     countries: {
-        type: [String],
-        required: false
-    },
-    sources: {
-        type: [String],
-        required: false
+        type: String,
+        enum: ['us', 'ca', 'gb', 'au', 'de', 'fr', 'it', 'es', 'nl', 'pl', 'ru', 'tr', 'ua', 'za'],
+        default: 'us'
     },
     createdAt: {
         type: Date,

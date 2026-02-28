@@ -9,12 +9,14 @@ app.use(express.urlencoded({ extended: true }));
 
 const usersRouter = require('./routes/usersRoute');
 const preferencesRouter = require('./routes/preferencesRoute');
+const newsRouter = require('./routes/newsRoute');
 
 const logger = require('./middlewares/loggerMiddleware');
 
 app.use(logger);
 app.use("/api/v1/users", usersRouter);
 app.use("/api/v1/preferences", preferencesRouter);
+app.use("/api/v1/news", newsRouter);
 app.get("/", (req, res) => {
     res.send("Welcome to the News Aggregator API");
 });
